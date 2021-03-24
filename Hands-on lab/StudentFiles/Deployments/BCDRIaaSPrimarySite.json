@@ -1,10 +1,10 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "domainControllerDnsName": {
       "type": "string",
-      "defaultValue": "bcdrdc1updateme",
+      "defaultValue": "dsabcrddns",
       "minLength": 1
     }
   },
@@ -34,7 +34,6 @@
     "ExternalLoadBalancerfrontEndIPConfigID": "[concat(variables('ExternalLoadBalancerID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
     "ExternalLoadBalancerPoolID": "[concat(variables('ExternalLoadBalancerID'),'/backendAddressPools/BackendPool1')]",
     "ExternalLoadBalancerProbeID": "[concat(variables('ExternalLoadBalancerID'),'/probes/tcpProbe')]",
-    "ExternalLoadbalancerFrontEndIPConfigID": "[concat(variables('ExternalLoadbalancerID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
     "bcdrstorageName": "[concat('bcdrstorage', uniqueString(resourceGroup().id))]",
     "bcdrstorageType": "Premium_LRS",
     "BCDRDC1Name": "BCDRDC1",
